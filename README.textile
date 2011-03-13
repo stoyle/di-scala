@@ -1,0 +1,5 @@
+h3. DI Scala
+
+This project shows some techniques with Dependency Injection in Scala. It aims to show the use of the Cake pattern, self types, and some of the gotchas with these techniques.
+
+It is used as example code for presentation held at Communities in Action in Oslo.
