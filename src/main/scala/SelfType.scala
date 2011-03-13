@@ -1,20 +1,32 @@
 package SelfType
 
 trait A {
-    def foo: Unit = println("In A")
+    def foo: Unit = println("In A.foo")
     override def toString = "A"
 }
 
 trait B {
     self: A =>
     def bar: Unit = {
+        println("In B.bar")
         self.foo
-        println(self.string)
-    }
-    def string = "B"
+        this.foo
+    }   
 }
 
-object C extends B with A with Application {
-    bar
+trait C {
+    self: B =>
+    def baz: Unit = {
+        // Does not compile
+        // self.foo
+        // this.foo
+
+        println("In C.baz")
+        bar
+    }   
+}
+
+object Main extends C with B with A with Application {
+    baz
 }
 
