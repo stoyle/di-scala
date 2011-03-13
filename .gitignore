@@ -1,0 +1,27 @@
+*.class
+target
+.classpath
+.project
+.manager
+*~
+build.xml
+manifest.mf
+nbproject
+reports
+catalog.xml
+TAGS
+.settings
+*.iws
+*.ipr
+*.iml
+.idea/
+
+.scala_dependencies
+
+# SBT ingores
+project/boot/
+project/build/target/
+project/plugins/target/
+project/plugins/lib_managed/
+project/plugins/src_managed/
+lib_managed/
