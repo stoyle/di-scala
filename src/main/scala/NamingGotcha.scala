@@ -46,6 +46,13 @@ import no.stoyle.service._
     val userRepository: UserRepository = new UserRepository
     val userService: UserService = new UserService                        
   }
+  
+  class TestRegistry extends UserServiceComponent
+                           with UserRepositoryComponent {
+
+    val userRepository: UserRepository = new UserRepository
+    val userService: UserService = new UserService                        
+  }
 
 }
 
@@ -60,8 +67,16 @@ import no.stoyle.registry._
     val service1: ComponentRegistry.UserService = ComponentRegistry.userService
     // type inference also fixes the problem
     val service2 = ComponentRegistry.userService
-    val user = service2.create("user", "pwd")
-    println(user)
+                                                
+    // When created through a class type names are very different
+    val testRegistry = new TestRegistry()
+    val service3: testRegistry.UserService = testRegistry.userService
+
+    // Type inference to the resque
+    val service4 = testRegistry.userService
+    
+    // Should consider a stable external interface, e.g. TheUserService
+    // val service5: TheUserService = ComponentRegistry.userService
   }
     
 }
