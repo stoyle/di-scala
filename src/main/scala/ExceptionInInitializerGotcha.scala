@@ -19,7 +19,7 @@ object Main extends Application {
             e.printStackTrace
         }
     }
-    
+
     class ComponentManagerClass extends A
     
     try {
@@ -34,5 +34,13 @@ object Main extends Application {
         }
     }
     
-    
+    try {
+      val inlineVariable = new A{}
+    }
+    catch {
+        case e: RuntimeException => {
+          println("Same behaviour as with normal class inheritance")
+        }
+    }
+   
 }
