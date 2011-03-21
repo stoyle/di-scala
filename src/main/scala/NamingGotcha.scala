@@ -36,7 +36,7 @@ class TestRegistry extends UserServiceComponent
   val userService: UserService = new UserService                        
 }
 
-object Main extends Application {
+object Usage {
   // Following is incorrect namespace, UserService belongs to object ComponentRegistry
   // val service: UserServiceComponent.UserService = ComponentRegistry.userService
 
@@ -57,5 +57,6 @@ object Main extends Application {
 
     
   // Should consider a stable external interface, e.g. TheUserService
+  // Check out StableTypeNames
   // val service5: TheUserService = ComponentRegistry.userService
 }
