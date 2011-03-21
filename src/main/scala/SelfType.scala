@@ -1,4 +1,4 @@
-package SelfType
+package selftype
 
 trait A {
   def foo: Unit = println("In A.foo")

@@ -1,4 +1,4 @@
-package ExceptionInInitializerGotcha
+package exceptionininitializergotcha
 
 trait A {
     throw new RuntimeException("This would be the root cause")

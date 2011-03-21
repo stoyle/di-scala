@@ -1,4 +1,4 @@
-package Circular
+package circular
 trait A {
     self: B =>
 }
