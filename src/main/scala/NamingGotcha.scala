@@ -50,6 +50,11 @@ object Main extends Application {
 
   // Type inference to the resque
   val service4 = testRegistry.userService
+  
+  val testRegistry2 = new TestRegistry()
+  // Typenames follow instance. This it not allowed:
+  // val service5: testRegistry.UserService = testRegistry2.userService
+
     
   // Should consider a stable external interface, e.g. TheUserService
   // val service5: TheUserService = ComponentRegistry.userService
