@@ -18,7 +18,7 @@ trait UserRepositoryComponent {
 
 
 trait UserService {
-    def create(username: String, password: String): User
+  def create(username: String, password: String): User
 }
 
 trait UserServiceComponent { 
