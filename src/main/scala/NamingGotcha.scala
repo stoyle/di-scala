@@ -44,7 +44,7 @@ object Usage {
   // type inference also fixes the problem
   val service2 = ComponentRegistry.userService
                                                 
-  // When created through a class type names are very different
+  // When created through, you can use path dependent types!
   val testRegistry = new TestRegistry()
   val service3: testRegistry.UserService = testRegistry.userService
 
@@ -54,7 +54,9 @@ object Usage {
   val testRegistry2 = new TestRegistry()
   // Typenames follow instance. This it not allowed:
   // val service5: testRegistry.UserService = testRegistry2.userService
-
+  
+  // Normal type
+  val service5: TestRegistry#UserService = testRegistry2.userService
     
   // Should consider a stable external interface, e.g. TheUserService
   // Check out StableTypeNames
